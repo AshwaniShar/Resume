@@ -1,0 +1,194 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Ashwani Sharma
+
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Ashwani Sharma} \\[7.5pt]
+\href{https://github.com/AshwaniShar}{\raisebox{-0.05\height}\faGithub\ AshwaniShar} \ $|$ \ 
+\href{https://www.linkedin.com/in/ashwanishar/}{\raisebox{-0.05\height}\faLinkedin\ ashwanishar} \ $|$ \ 
+%\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
+\href{mailto:ashwanisharma9793@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ ashwanisharma9793@gmail.com} \ $|$ \ 
+\href{tel:+91-9076676489}{\raisebox{-0.05\height}\faMobile \ +91-9076676489} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+Enthusiastic and motivated data science graduate with a solid foundation in statistical analysis, machine learning, and programming languages such as Python and R. Academic projects and coursework have provided hands-on experience in data cleaning, exploratory data analysis, and model building. Possesses a strong aptitude for problem-solving and a keen interest in leveraging data-driven insights to drive business growth. Excellent communicator with a collaborative mindset, eager to contribute to innovative projects and expand knowledge in the field of data science\href{https://github.com/AshwaniShar}{click here}.
+
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Trainee} & \hfill May 2024 - present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{    Passionate and dedicated data science trainee with a strong foundation in statistics, programming, and machine learning concepts. Currently undergoing intensive training in data science methodologies, including data preprocessing, predictive modeling, and data visualization. Eager to apply theoretical knowledge to real-world projects and gain hands-on experience in analyzing complex datasets. A quick learner with excellent problem-solving skills and a proactive approach to continuous learning. Enthusiastic about contributing to cutting-edge projects and making meaningful contributions to the field of data science}  \\
+\end{tabularx}
+
+%
+%Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Web Scrapping} & \hfill \href{https://github.com/AshwaniShar/web_scrapping}{Link} \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{ I embarked on a journey to explore the vast landscape of data available on the web. With a passion for extracting valuable insights from online sources, I dove into the world of web scraping techniques and tools. Armed with Python and popular libraries like BeautifulSoup and Scrapy, I embarked on various scraping projects, ranging from gathering product information for market analysis to extracting news articles for sentiment analysis.}  \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2022 - present & M.Tech.at \textbf{Dr. APJ Abdul Kalam Technical University} \hfill \normalsize  \\
+
+2018 - 2022 & B.Tech. at \textbf{Dr. APJ Abdul Kalam Technical University} \hfill \\ 
+
+2018 & Class 12th Uttar Pradesh State Board of High School and Intermediate Education \hfill   \\
+
+2016 & Class 10th Uttar Pradesh State Board of High School and Intermediate Education \hfill   \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Certificate}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+Docker, Python & IBM\hfill \normalsize  \\
+
+JAVA, SQL, Python & Hackerrank   \hfill \\ 
+
+Software Engineering & JP Morgan Chase and Co. \hfill   \\
+
+Data Science & Top Mentor\hfill   \\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Skills &  \normalsize{Python, Machine Learning, Statistics, SQL, MongoDb, Power BI, Pandas, Numpy, Seaborn, Matplotlib, R, Computer Vision, Generative AI, Deep learning, Tableau}\\
+Some Other Skills  &  \normalsize{Microsoft excel, Java, Android, Linux, Agile, Scrapping}\\  
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Last updated: \today}
+
+\end{document}
